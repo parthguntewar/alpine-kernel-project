@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.xml
+
+# Temporary report outputs
+*.json
+!examples/*.json
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS metadata
+.DS_Store
+
+# Secrets and environment files — NEVER commit these
+.env
+*.key
+*.pem
+*.crt
+secrets/
+
+# VirtualBox files (this repo contains a VM; exclude large binary files)
+*.vdi
+*.vmdk
+*.iso
+*.ova
+*.vbox
+*.vbox-prev
+Logs/

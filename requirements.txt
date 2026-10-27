@@ -1,0 +1,14 @@
+# AlpineGuard Python dependencies
+#
+# AlpineGuard is intentionally built on the Python standard library only.
+# No third-party packages are required for normal operation.
+#
+# The packages below are optional development/test dependencies.
+# They are NOT required on the Alpine VM.
+
+# --- Test runner (optional, unittest works without it) ---
+# pytest>=7.0            # uncomment if you prefer pytest over unittest
+
+# --- Static analysis (development only) ---
+# pyflakes>=3.0
+# mypy>=1.0

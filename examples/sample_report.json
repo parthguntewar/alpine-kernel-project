@@ -1,0 +1,148 @@
+{
+  "alpineguard_version": "1.0.0",
+  "generated_at": "2026-10-27T16:30:00+00:00",
+  "_note": "This is a sample/example JSON report showing the output format.",
+  "_disclaimer": "Values shown below are representative examples, not real measurements.",
+  "system_info": {
+    "distro_name": "Alpine Linux v3.24",
+    "distro_version": "3.24.0",
+    "distro_id": "alpine",
+    "kernel_version": "6.1.58-0-lts",
+    "uptime": {
+      "total_seconds": 8100.0,
+      "days": 0,
+      "hours": 2,
+      "minutes": 15,
+      "seconds": 0,
+      "human": "2 hours, 15 minutes"
+    },
+    "cpu": {
+      "architecture": "x86_64",
+      "model_name": "Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz",
+      "num_cores": 2
+    }
+  },
+  "memory": {
+    "total_bytes": 2097152000,
+    "available_bytes": 1214300160,
+    "used_bytes": 882851840,
+    "utilization_pct": 42.1,
+    "total_mib": 2000.0,
+    "available_mib": 1158.1,
+    "used_mib": 841.9,
+    "swap_total_bytes": 0,
+    "swap_used_bytes": 0,
+    "swap_total_mib": 0.0,
+    "swap_used_mib": 0.0,
+    "error": null
+  },
+  "disk": {
+    "root": {
+      "mountpoint": "/",
+      "total_bytes": 10737418240,
+      "available_bytes": 4831838208,
+      "used_bytes": 5905580032,
+      "utilization_pct": 55.0,
+      "total_gib": 10.0,
+      "available_gib": 4.5,
+      "used_gib": 5.5,
+      "error": null
+    },
+    "mounts": [
+      {
+        "mountpoint": "/",
+        "total_gib": 10.0,
+        "available_gib": 4.5,
+        "used_gib": 5.5,
+        "utilization_pct": 55.0,
+        "error": null
+      }
+    ]
+  },
+  "cpu": {
+    "utilization_pct": 15.2,
+    "interval_used": 1.001,
+    "error": null
+  },
+  "processes": {
+    "total_visible": 42,
+    "top_processes": [
+      {"pid": 1234, "name": "python3", "state": "S", "uid": 1000, "rss_mib": 48.3, "cpu_pct": 2.1, "cmdline": "python3 -m alpineguard"},
+      {"pid": 456, "name": "sshd", "state": "S", "uid": 0, "rss_mib": 6.2, "cpu_pct": 0.0, "cmdline": "sshd: /usr/sbin/sshd -D"}
+    ],
+    "high_cpu_processes": [],
+    "high_mem_processes": []
+  },
+  "network": {
+    "interfaces": [
+      {
+        "name": "eth0",
+        "rx_bytes": 1048576,
+        "rx_packets": 1024,
+        "rx_errors": 0,
+        "tx_bytes": 524288,
+        "tx_packets": 512,
+        "tx_errors": 0,
+        "ipv6": ["fe80::a00:27ff:fe00:0"]
+      },
+      {
+        "name": "lo",
+        "rx_bytes": 2048,
+        "rx_packets": 20,
+        "rx_errors": 0,
+        "tx_bytes": 2048,
+        "tx_packets": 20,
+        "tx_errors": 0,
+        "ipv6": ["::1"]
+      }
+    ],
+    "listening_ports": [
+      {"local_ip": "0.0.0.0", "local_port": 22, "state": "LISTEN"}
+    ],
+    "tcp_connections": [
+      {"local_ip": "0.0.0.0", "local_port": 22, "remote_ip": "0.0.0.0", "remote_port": 0, "state": "LISTEN", "inode": 12345}
+    ],
+    "error": null
+  },
+  "security": {
+    "auth_logs": {
+      "log_path": "/var/log/messages",
+      "failed_attempts": 3,
+      "source_ips": ["192.168.1.100"],
+      "sample_lines": [
+        "Oct 27 14:22:01 alpine-vm sshd[1234]: Failed password for invalid user admin from 192.168.1.100 port 54321 ssh2"
+      ],
+      "severity": "note",
+      "message": "3 failed login event(s) found in /var/log/messages",
+      "note": "Failed logins occur normally on networked systems. This count alone does not confirm an attack."
+    },
+    "listening_ports": {
+      "ports": [{"local_ip": "0.0.0.0", "local_port": 22, "state": "LISTEN"}],
+      "high_risk_ports": [],
+      "severity": "ok",
+      "message": "1 listening port(s) — none classified as high-risk"
+    },
+    "world_writable": {
+      "checked_paths": ["/tmp", "/var/tmp", "/etc", "/etc/passwd"],
+      "world_writable": ["/tmp"],
+      "severity": "warning",
+      "message": "1 world-writable path(s) found"
+    },
+    "overall_severity": "warning"
+  },
+  "alerts": [
+    {"level": "OK", "category": "memory", "message": "Memory OK — 42.1% used (841.9 MiB / 2000.0 MiB, 1158.1 MiB available)", "value": 42.1, "threshold": null, "recommendation": ""},
+    {"level": "OK", "category": "disk", "message": "Disk OK [/] — 55.0% used (5.5 GiB / 10.0 GiB, 4.5 GiB free)", "value": 55.0, "threshold": null, "recommendation": ""},
+    {"level": "OK", "category": "cpu", "message": "CPU OK — 15.2% utilization", "value": 15.2, "threshold": null, "recommendation": ""},
+    {"level": "OK", "category": "security", "message": "3 failed login event(s) found in /var/log/messages", "value": null, "threshold": null, "recommendation": ""},
+    {"level": "OK", "category": "network/ports", "message": "1 listening port(s) — none classified as high-risk", "value": null, "threshold": null, "recommendation": ""},
+    {"level": "WARNING", "category": "filesystem", "message": "1 world-writable path(s) found", "value": null, "threshold": null, "recommendation": "Review world-writable paths: /tmp"}
+  ],
+  "alert_summary": {
+    "total": 6,
+    "ok_count": 5,
+    "warning_count": 1,
+    "error_count": 0,
+    "overall_status": "WARNING"
+  }
+}
